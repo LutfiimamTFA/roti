@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILKY DESSERT BOX</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet" type="text/css"> 
+    <link href="css/styles.css" rel="stylesheet" type="text/css"> 
+    <style>
+        
+.navbar {
+    display: flex;
+    justify-content: center; /* Mengatur agar navbar berada di tengah horizontal */
+    align-items: center; /* Pusatkan vertikal jika diperlukan */
+    padding: 20px 0;
+}
+
+.navbar-brand img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand span {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pusatkan ikon-ikon di sebelah kanan */
+}
+
+.nav-icons a {
+    margin-right: 15px; /* Jarak antara ikon-ikon */
+}
+
+.nav-icons a:last-child {
+    margin-right: 0; /* Menghapus margin kanan dari ikon terakhir */
+}
+
+.navbar-nav .nav-item .nav-link {
+    display: flex;
+    justify-content: flex-end; /* Pusatkan menu di sisi kanan */
+    align-items: center;
+    padding: 0 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    margin-right: 5px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007bff;
+}
+
+.carousel-item {
+    height: 70vh; /* Sesuaikan tinggi carousel sesuai kebutuhan */
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar-toggler-icon {
+    color: #007bff;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.product-page {
+    display: flex;
+    padding: 20px;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-details {
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.product-details h1 {
+    font-size: 24px;
+}
+
+.product-details .price {
+    font-size: 20px;
+    color: #d9534f;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating span:first-child {
+    color: #f0ad4e;
+}
+
+.description {
+    margin: 10px 0;
+}
+
+.options {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.options div {
+    flex-grow: 1;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.quantity input {
+    width: 40px;
+    text-align: center;
+}
+
+.add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.sku-category {
+    margin: 10px 0;
+}
+
+.share a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #555;
+}
+
+.description-reviews {
+    padding: 20px;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.tab.active {
+    background-color: #fff;
+    border-bottom: 2px solid #d9534f;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    padding: 20px 0;
+}
+
+.service {
+  background-color: #d8b28fef;
+  padding: 30px 0;
+  margin-top: 30px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between; /* Mengatur jarak antar elemen secara merata */
+  align-items: center; /* Memastikan elemen tetap terpusat vertikal */
+}
+
+.col-4 {
+  text-align: center;
+  flex: 4; /* Menyamakan lebar setiap kolom */
+}
+
+h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.contact-info {
+    background-color: white;
+    padding: 50px 0;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+</style>
+
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm animate__animated animate__fadeInDown">
+        <div class="container">
+            <a class="navbar-brand" href="perusahaan.php">
+                <img src="images/logo.png" alt="Logo">
+                <span>MILKY DESSERT BOX</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-1s">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-2s">
+                        <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                    </li>
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-3s">
+                        <a class="nav-link" href="shop.html"><i class="fas fa-concierge-bell"></i> Shop</a>
+                    </li>
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-4s">
+                        <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-icons">
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-2s">
+                    <a href="#"><i class="icon user-icon fas fa-user"></i></a>
+                    </li>
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-3s">
+                    <a href="#"><i class="icon heart-icon fas fa-heart"></i></a>
+                    </li>
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-4s">
+                    <a href="detail.html"><i class="icon cart-icon fas fa-shopping-cart"></i></a>
+                    </li>
+                </div>
+                <div class="nav-icons">
+                    <a href="#"><i class="icon user-icon"></i></a>
+                    <a href="#"><i class="icon heart-icon"></i></a>
+                    <a href="detail.html"><i class="icon cart-icon"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <section class="product-details">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> > <a href="shop.html">Shop</a> > Choco Kitkat
+        </div>
+        <div class="product-page">
+            <div class="product-image">
+                <img src="images/kitkat.jpg" alt="Choco Kitkat">
+            </div>
+            <div class="product-details">
+                <h1>Choco Kitkat</h1>
+                <p class="price">Rp 27.000</p>
+                <div class="rating">
+                    <span>★★★★★</span>
+                    <span>5 Customer Reviews</span>
+                </div>
+                <p class="description">
+                    This box features the classic sweetness of a gooey, caramelized Pecan Pie, the crisp and buttery perfection of Almond Cookies dusted with powdered sugar, and the creamy, melt-in-your-mouth decadence of Peanut Butter Fudge layered with smooth chocolate.
+                </p>
+                <div class="options">
+                    <div class="variant">
+                        <label for="variant">Varian</label>
+                        <select id="variant">
+                            <option value="1-box">1 Box</option>
+                            <option value="bundling">Bundling</option>
+                            <option value="mini">Mini</option>
+                        </select>
+                    </div>
+                    <div class="topping">
+                        <label for="topping">Topping</label>
+                        <select id="topping">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                            <option value="extra">Extra</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="quantity">
+                    <button class="minus">-</button>
+                    <input type="number" value="1">
+                    <button class="plus">+</button>
+                </div>
+                <button class="add-to-cart" >Add To Cart</button><a href="bill.html"></a>
+                <div class="sku-category">
+                    <p>SKU: SS001</p>
+                    <p>Category: Dessert Box</p>
+                </div>
+                <div class="share">
+                    <a href="#">Facebook</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="description-reviews">
+            <button class="tab active" data-tab="description">Description</button>
+            <button class="tab" data-tab="reviews">Reviews [5]</button>
+            <div class="tab-content active" id="description">
+                <p>Indulge in the rich and satisfying flavors of our Nutty Indulgence Box...</p>
+            </div>
+            <div class="tab-content" id="reviews">
+                <p>Customer reviews go here...</p>
+            </div>
+        </div>
+        
+    <section class="related-products">
+        <h2>Related Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="card" style="width: 18rem">
+                <img src="images/matcha.jpg" class="card-img-top" alt="matcha Cheese">
+                <div class="card-body">
+                  <h5 class="card-title font-bold text-center mb-8">Matcha Cheese</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Rp 25.000</li>
+                </ul>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="images/red velvet.jpg" class="card-img-top" alt="red velvet">
+                <div class="card-body">
+                  <h5 class="card-title font-bold text-center mb-8">Red Velvet</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Rp 25.000</li>
+                </ul>
+              </div>
+            <div class="product-item">
+                <div class="card" style="width: 18rem;">
+                    <img src="images/strawberry 1.jpg" class="card-img-top" alt="strawberry cheesy">
+                    <div class="card-body">
+                      <h5 class="card-title font-bold text-center mb-8">Strawberry Cheesy</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Rp 27.000</li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="images/tiramisu.jpg" class="card-img-top" alt="Tiramisu">
+                <div class="card-body">
+                  <h5 class="card-title font-bold text-center mb-8">Tiramisu</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Rp 25.000</li>
+                </ul>
+              </div>
+        </div>
+    </section>
+</main>
+
+<section class="service">
+    <div class="container">
+        <h3>SERVICE</h3>
+        <div class="box">
+            <div class="col-4">
+                <div class="icon"><i class="fas fa-trophy"></i>HIGH QUALITY</div>
+                <h4>Crafted From Top Materials</h4>	
+            </div>
+            <div class="col-4">
+                <div class="icon"><i class="fas fa-check"></i></div>
+                <h4>WARRANTY PROTECTION</h4>	
+            </div>
+            <div class="col-4">
+                <div class="icon"><i class="fas fa-giving"></i></div>
+                <h4>FREE SHIPPING</h4>	
+            </div>
+            <div class="col-4">
+                <div class="icon"><i class="fas fa-support"></i></div>
+                <h4>24/7 SUPPORT</h4>	
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact info">
+    <div class="container">
+        <h3>CONTACT INFO</h3>
+        <div class="box">
+            <div class="col-4">
+                <h2>Address</h2>
+                <P>JL. Imam Bonjol No.207, Pendrikan </P>
+                <p>Kidul, Kec. Semarang Tengah, Kota</p>
+                <p>Semarang, Jawa Tengah 50131</p></p>
+            </div>
+            <div class="col-4">
+                <h2>Email</h2>
+                <p></p>
+            </div>
+            <div class="col-4">
+                <h2>Telp.</h2>
+                <p></p>
+            </div>
+            <div class="col-4">
+                <h2>contact person</h2>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Footer -->
+ <footer class="bg-gray-900 text-white py-2">
+    <div class="container mx-auto px-4 text-center">
+        <p style="font-family: 'Roboto', sans-serif;">&copy; 2024 MILKY DESSERT BOX. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
