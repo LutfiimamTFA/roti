@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Invoice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+    .invoice-details {
+      margin-bottom: 20px;
+    }
+    .invoice-details p {
+      margin: 5px 0;
+    }
+    .item-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    .item-table th, .item-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    .item-table th {
+      background-color: #f2f2f2;
+    }
+    .total {
+      text-align: right;
+      font-weight: bold;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input, .form-group textarea {
+      width: calc(100% - 16px);
+      padding: 8px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .form-group .error-message {
+      color: red;
+      font-size: 0.8em;
+      margin-top: 5px;
+    }
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>Manual Invoice</h2>
+  
+  <form id="invoiceForm" onsubmit="return validateForm()">
+    <div class="form-group">
+      <label for="invoiceNumber">Invoice Number:</label>
+      <input type="text" id="invoiceNumber" name="invoiceNumber" required>
+      <div class="error-message" id="invoiceNumberError"></div>
+    </div>
+    
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+      <div class="error-message" id="dateError"></div>
+    </div>
+    
+    <div class="form-group">
+      <label for="customerName">Customer Name:</label>
+      <input type="text" id="customerName" name="customerName" required>
+      <div class="error-message" id="customerNameError"></div>
+    </div>
+    
+    <div class="form-group">
+      <label for="customerEmail">Customer Email:</label>
+      <input type="email" id="customerEmail" name="customerEmail" required>
+      <div class="error-message" id="customerEmailError"></div>
+    </div>
+    
+
+    
+    <div class="form-group">
+      <label for="paymentMethod">Payment Method:</label>
+      <input type="text" id="paymentMethod" name="paymentMethod" required>
+      <div class="error-message" id="paymentMethodError"></div>
+    </div>
+    
+    <div class="form-group">
+      <label for="dueDate">Due Date:</label>
+      <input type="date" id="dueDate" name="dueDate" required>
+      <div class="error-message" id="dueDateError"></div>
+    </div>
+    
+    <div class="form-group">
+      <label for="notes">Notes:</label>
+      <textarea id="notes" name="notes"></textarea>
+    </div>
+    
+    <button type="submit" class="btn">Submit Invoice</button>
+    <button onclick="returnToIndex()" class="btn">Kembali</button>
+  </form>
+  
+  <script>
+    function returnToIndex() {
+      window.location.href = 'index.html'; // Mengarahkan ke index.php
+    }
+
+    function validateForm() {
+      var form = document.getElementById('invoiceForm');
+      var invoiceNumber = form['invoiceNumber'].value.trim();
+      var date = form['date'].value.trim();
+      var customerName = form['customerName'].value.trim();
+      var customerEmail = form['customerEmail'].value.trim();
+      var paymentMethod = form['paymentMethod'].value.trim();
+      var dueDate = form['dueDate'].value.trim();
+      var grandTotal = form['grandTotal'].value.trim();
+      
+      var isValid = true;
+      
+      if (invoiceNumber === '') {
+        document.getElementById('invoiceNumberError').textContent = 'Please enter invoice number';
+        isValid = false;
+      } else {
+        document.getElementById('invoiceNumberError').textContent = '';
+      }
+      
+      if (date === '') {
+        document.getElementById('dateError').textContent = 'Please select date';
+        isValid = false;
+      } else {
+        document.getElementById('dateError').textContent = '';
+      }
+      
+      if (customerName === '') {
+        document.getElementById('customerNameError').textContent = 'Please enter customer name';
+        isValid = false;
+      } else {
+        document.getElementById('customerNameError').textContent = '';
+      }
+      
+      if (customerEmail === '') {
+        document.getElementById('customerEmailError').textContent = 'Please enter customer email';
+        isValid = false;
+      } else {
+        document.getElementById('customerEmailError').textContent = '';
+      }
+      
+      if (paymentMethod === '') {
+        document.getElementById('paymentMethodError').textContent = 'Please enter payment method';
+        isValid = false;
+      } else {
+        document.getElementById('paymentMethodError').textContent = '';
+      }
+      
+      if (dueDate === '') {
+        document.getElementById('dueDateError').textContent = 'Please select due date';
+        isValid = false;
+      } else {
+        document.getElementById('dueDateError').textContent = '';
+      }
+      
+      // Validasi total harus diisi (contoh: dengan mengecek grandTotal)
+      if (grandTotal === '') {
+        alert('Please calculate and fill in the grand total.');
+        isValid = false;
+      }
+      
+      return isValid;
+    }
+    
+    // Hapus alert pengingat saat halaman dimuat
+    setTimeout(function() {
+      window.onload = function() {
+        alert('cekk');
+      };
+    }, 1000);
+  </script>
+</body>
+</html>
