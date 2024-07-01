@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILKY DESSERT BOX</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css"> 
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm animate__animated animate__fadeInDown">
+        <div class="container">
+            <a class="navbar-brand" href="perusahaan.php">
+                <img src="images/logo.png" alt="Logo" class="h-12">
+                <span class="ml-2 font-bold text-lg">MILKY DESSERT BOX</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-1s">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-2s">
+                        <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                    </li>
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-3s">
+                        <a class="nav-link" href="shop.html"><i class="fas fa-concierge-bell"></i> Shop</a>
+                    </li>
+                    <li class="nav-item animate__animated animate__fadeInRight animate__delay-4s">
+                        <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-icons flex ml-auto">
+                    <a href="#" class="nav-item animate__animated animate__fadeInRight animate__delay-2s"><i class="icon user-icon fas fa-user"></i></a>
+                    <a href="#" class="nav-item animate__animated animate__fadeInRight animate__delay-3s"><i class="icon heart-icon fas fa-heart"></i></a>
+                    <a href="bill.html" class="nav-item animate__animated animate__fadeInRight animate__delay-4s"><i class="icon cart-icon fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel Section -->
+    <section id="home">
+        <div id="carouselExampleIndicators" class="carousel slide animate__animated animate__fadeIn" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('images/banner.jpg');">
+                    <div class="overlay"></div>
+                    <div class="container h-full flex items-center justify-center text-center text-white relative">
+                        <div class="animate__animated animate__fadeInUp">
+                            <h1 class="text-5xl font-bold text-center" style="font-family: 'Roboto', sans-serif; color: #ffcc00;">MILKY DESSERT BOX</h1>
+                            <div class="text-center mt-6">
+                                <a href="about.html" class="btn btn-lg btn-primary" style="font-family: 'Roboto', sans-serif; letter-spacing: 1px; background-color: #322800; border-color:#322800;">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('images/carousel.jpg');">
+                    <div class="overlay"></div>
+                    <div class="container h-full flex items-center justify-center text-center text-white relative">
+                        <div class="animate__animated animate__fadeInUp">
+                            <h1 class="text-5xl font-bold text-center" style="font-family: 'Roboto', sans-serif; color: #ffcc00;">Makes Your Day With Milky Dessert Box</h1>
+                            <div class="text-center mt-6">
+                                <a href="shop.html" class="btn btn-lg btn-primary" style="font-family: 'Roboto', sans-serif; letter-spacing: 1px; background-color: #322800; border-color: #322800;">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('images/banner2.jpg');">
+                    <div class="overlay"></div>
+                    <div class="container h-full flex items-center justify-center text-center text-white relative">
+                        <div class="animate__animated animate__fadeInUp">
+                            <h1 class="text-5xl font-bold text-center" style="font-family: 'Roboto', sans-serif; color: #ffcc00;">Special Promo Buy 1 Get 1!</h1>
+                            <div class="text-center mt-6">
+                                <a href="shop.html" class="btn btn-lg btn-primary" style="font-family: 'Roboto', sans-serif; letter-spacing: 1px; background-color: #322800; border-color: #322800;">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+
+
+    <section id="shop" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8" style="font-family: 'Pacifico', cursive; color: #333;">Our Best Product</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card">
+                    <img src="images/choco.jpg" class="card-img-top" alt="Chocolate Lover's">
+                    <div class="card-body">
+                        <h5 class="card-title font-bold text-center mb-4">Chocolate Lover's</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-center">Rp 25.000</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="images/tiramisu.jpg" class="card-img-top" alt="Tiramisu">
+                    <div class="card-body">
+                        <h5 class="card-title font-bold text-center mb-4">Tiramisu</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-center">Rp 25.000</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="images/oreo.jpg" class="card-img-top" alt="Burneo">
+                    <div class="card-body">
+                        <h5 class="card-title font-bold text-center mb-4">Burneo</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-center">Rp 25.000</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+      
+<section class="service py-12">
+    <div class="container mx-auto px-4">
+        <h3 class="text-center mb-8">SERVICE</h3>
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-trophy text-4xl mr-4"></i>
+                    <div>
+                        <h4 class="font-bold">HIGH QUALITY</h4>
+                        <p>Crafted From Top Materials</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-check text-4xl mr-4"></i>
+                    <div>
+                        <h4 class="font-bold">WARRANTY PROTECTION</h4>
+                        <p>Over 2 Years</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-gift text-4xl mr-4"></i>
+                    <div>
+                        <h4 class="font-bold">FREE SHIPPING</h4>
+                        <p>Order Over 150$</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-headset text-4xl mr-4"></i>
+                    <div>
+                        <h4 class="font-bold">24/7 SUPPORT</h4>
+                        <p>Dedicated Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact py-12">
+    <div class="container mx-auto px-4">
+        <h3 class="text-center mb-8">CONTACT INFO</h3>
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <h2 class="font-bold">Address</h2>
+                <p>JL. Imam Bonjol No.207, Pendrikan </p>
+                <p>Kidul, Kec. Semarang Tengah, Kota</p>
+                <p>Semarang, Jawa Tengah 50131</p>
+            </div>
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <h2 class="font-bold">Email</h2>
+                <p>info@milkdessertbox.com</p>
+            </div>
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <h2 class="font-bold">Telp.</h2>
+                <p>+62 123 456 789</p>
+            </div>
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <h2 class="font-bold">Contact Person</h2>
+                <p>Milky Dessert</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-2">
+    <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2024 MILKY DESSERT BOX. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+.navbar {
+    display: flex;
+    justify-content: center; /* Mengatur agar navbar berada di tengah horizontal */
+    align-items: center; /* Pusatkan vertikal jika diperlukan */
+    padding: 20px 0;
+}
+
+.navbar-brand img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand span {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pusatkan ikon-ikon di sebelah kanan */
+}
+
+.nav-icons a {
+    margin-right: 15px; /* Jarak antara ikon-ikon */
+}
+
+.nav-icons a:last-child {
+    margin-right: 0; /* Menghapus margin kanan dari ikon terakhir */
+}
+
+.navbar-nav .nav-item .nav-link {
+    display: flex;
+    justify-content: flex-end; /* Pusatkan menu di sisi kanan */
+    align-items: center;
+    padding: 0 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    margin-right: 5px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007bff;
+}
+
+.carousel-item {
+    height: 70vh; /* Sesuaikan tinggi carousel sesuai kebutuhan */
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar-toggler-icon {
+    color: #007bff;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+.service {
+  background-color: #d8b28fef;
+  padding: 30px 0;
+  margin-top: 30px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between; /* Mengatur jarak antar elemen secara merata */
+  align-items: center; /* Memastikan elemen tetap terpusat vertikal */
+}
+
+.col-4 {
+  text-align: center;
+  flex: 4; /* Menyamakan lebar setiap kolom */
+}
+
+h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.contact-info {
+    background-color: white;
+    padding: 50px 0;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+    

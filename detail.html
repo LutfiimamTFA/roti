@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILKY DESSERT BOX</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css"> 
+
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .form-group .error-message {
+      color: red;
+      font-size: 0.8em;
+      margin-top: 5px;
+    }
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Billing Details</h2>
+    
+    <form id="invoiceForm" onsubmit="return validateForm()">
+      <div class="form-group row">
+        <label for="invoiceNumber" class="col-sm-3 col-form-label">Phone:</label>
+        <div class="col-sm-9">
+          <input type="text" id="invoiceNumber" name="invoiceNumber" class="form-control" required>
+          <div class="error-message" id="invoiceNumberError"></div>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label for="date" class="col-sm-3 col-form-label">Date:</label>
+        <div class="col-sm-9">
+          <input type="date" id="date" name="date" class="form-control" required>
+          <div class="error-message" id="dateError"></div>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label for="customerName" class="col-sm-3 col-form-label">Customer Name:</label>
+        <div class="col-sm-9">
+          <input type="text" id="customerName" name="customerName" class="form-control" required>
+          <div class="error-message" id="customerNameError"></div>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label for="customerEmail" class="col-sm-3 col-form-label">Street Address:</label>
+        <div class="col-sm-9">
+          <input type="email" id="customerEmail" name="customerEmail" class="form-control" required>
+          <div class="error-message" id="customerEmailError"></div>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label for="paymentMethod" class="col-sm-3 col-form-label">Payment Method:</label>
+        <div class="col-sm-9">
+          <input type="text" id="paymentMethod" name="paymentMethod" class="form-control" required>
+          <div class="error-message" id="paymentMethodError"></div>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label for="dueDate" class="col-sm-3 col-form-label">Due Date:</label>
+        <div class="col-sm-9">
+          <input type="date" id="dueDate" name="dueDate" class="form-control" required>
+          <div class="error-message" id="dueDateError"></div>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label for="notes" class="col-sm-3 col-form-label">Notes:</label>
+        <div class="col-sm-9">
+          <textarea id="notes" name="notes" class="form-control"></textarea>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <div class="col-sm-9 offset-sm-3">
+          <button type="submit" class="btn">Submit Invoice</button>
+          <button onclick="returnToIndex()" class="btn">Kembali</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  <script>
+    function returnToIndex() {
+      window.location.href = 'index.html'; // Redirect to index.php
+    }
+
+    function validateForm() {
+      var form = document.getElementById('invoiceForm');
+      var invoiceNumber = form['invoiceNumber'].value.trim();
+      var date = form['date'].value.trim();
+      var customerName = form['customerName'].value.trim();
+      var customerEmail = form['customerEmail'].value.trim();
+      var paymentMethod = form['paymentMethod'].value.trim();
+      var dueDate = form['dueDate'].value.trim();
+      
+      var isValid = true;
+      
+      if (invoiceNumber === '') {
+        document.getElementById('invoiceNumberError').textContent = 'Please enter invoice number';
+        isValid = false;
+      } else {
+        document.getElementById('invoiceNumberError').textContent = '';
+      }
+      
+      if (date === '') {
+        document.getElementById('dateError').textContent = 'Please select date';
+        isValid = false;
+      } else {
+        document.getElementById('dateError').textContent = '';
+      }
+      
+      if (customerName === '') {
+        document.getElementById('customerNameError').textContent = 'Please enter customer name';
+        isValid = false;
+      } else {
+        document.getElementById('customerNameError').textContent = '';
+      }
+      
+      if (customerEmail === '') {
+        document.getElementById('customerEmailError').textContent = 'Please enter customer email';
+        isValid = false;
+      } else {
+        document.getElementById('customerEmailError').textContent = '';
+      }
+      
+      if (paymentMethod === '') {
+        document.getElementById('paymentMethodError').textContent = 'Please enter payment method';
+        isValid = false;
+      } else {
+        document.getElementById('paymentMethodError').textContent = '';
+      }
+      
+      if (dueDate === '') {
+        document.getElementById('dueDateError').textContent = 'Please select due date';
+        isValid = false;
+      } else {
+        document.getElementById('dueDateError').textContent = '';
+      }
+      
+      return isValid;
+    }
+    
+    // Hapus alert pengingat saat halaman dimuat
+    setTimeout(function() {
+      window.onload = function() {
+        alert('cekk');
+      };
+    }, 1000);
+  </script>
+</body>
+</html>
